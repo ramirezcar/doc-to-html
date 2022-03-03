@@ -1,6 +1,6 @@
-function SuggestButton({className, callback, title, match}) {
+function SuggestButton({className, callback, title, match, matchIndex}) {
   return(
-    <button className={"suggest "+className} onClick={callback}>
+    <button className={"suggest "+className} match-index={matchIndex} onClick={callback}>
       <b className="">{title} </b>
       <span className="">{match}</span>
   </button>
