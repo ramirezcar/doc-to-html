@@ -1,11 +1,11 @@
-import "./styles.scss";
+import "./styles.css";
 import mammoth from "mammoth";
 import { useState } from "react";
 
 export default function App() {
   const [renderedDoc, setRenderedDoc] = useState();
 
-  const h1 = new RegExp("<(S*?)[^>]*>.*?</\1>|<.*?/>");
+  const h1 = new RegExp("<(S*?)[^>]*>.*?</\\1>|<.*?/>");
 
   function getFirstChild(string) {
     let output = h1.exec(string);
