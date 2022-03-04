@@ -8,7 +8,8 @@
     "mammoth": "1.4.19",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-scripts": "^4.0.0"
+    "react-scripts": "^4.0.0",
+    "sass": "^1.49.9"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
