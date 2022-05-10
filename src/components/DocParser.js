@@ -24,6 +24,11 @@ export default function DocParser() {
     let rendered = rendered_str.replace('<p><strong>', `<p class="title ${matchClasses.titleMatch}"><strong>`)
     return rendered
   }
+  
+  function replaceWithSignClass(rendered_str){
+    let rendered = rendered_str.replace('(<p>(FIRMA).*</p>)', '')
+    return rendered
+  }
 
   function handleChangeFile(inputFileElement) {
     var files = inputFileElement.files || [];
@@ -38,11 +43,13 @@ export default function DocParser() {
           let rendered = resultObject.value;
           // Before render: String pre-render
           rendered = replaceWithTitleClass(rendered)
+          rendered = replaceWithSignClass(rendered)
           setRenderedDoc(rendered)
           
           // After render: DOM rendered elements
           const paragraphs = document.getElementsByTagName('p')
           const titleClassParagraphs = document.querySelectorAll('p.title')
+          const signsParagraphs = document.querySelectorAll('p.title')
           const tables = document.querySelectorAll('table')
           if(titleClassParagraphs !== null){
             setPossibleHeaderTitles(titleClassParagraphs ?? null)

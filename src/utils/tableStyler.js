@@ -5,6 +5,8 @@ const tableStyler = (possibleTables) => {
   possibleTables.forEach(possibleTable => {
     possibleTable.className = `title ${matchclasses.tableMatch}`;
     possibleTable.style.margin = '20px auto'
+    possibleTable.previousSibling.style.textAlign = 'center'
+    possibleTable.previousSibling.style.fontWeight = 'bold'
     const tableRows = possibleTable.rows
     for(let row of tableRows) {
       for(let cell of row.cells) {
